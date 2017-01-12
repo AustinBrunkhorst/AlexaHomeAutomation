@@ -4,21 +4,21 @@ var http = require( 'http' );
 var queryString = require( 'querystring' );
 var alexaSdk = require( 'alexa-sdk' );
 
-var Config = {
+var config = {
     // general stuff, revisioned
-    Public: require( './Config/Public.js' ),
+    public: require( './Config/Public.js' ),
     // private keys and such, not revisioned - check out ./Config/Private-Skeleton.js
-    Private: require( './Config/Private.js' )
+    private: require( './Config/Private.js' )
 };
 
 exports.handler = function(event, context, callback) {
     var alexa = alexaSdk.handler( event, context );
 
-    alexa.registerHandlers( Handlers );
+    alexa.registerHandlers( handlers );
     alexa.execute( );
 };
 
-var Handlers = {
+var handlers = {
     'LaunchRequest': function () {
         this.emit( ':tell', 'hey man whats up' );
     },
@@ -30,9 +30,9 @@ var Handlers = {
         } );
 
         var options = {
-            host: Config.Public.IntentPayload.Host,
-            port: Config.Public.IntentPayload.Port,
-            path: Config.Public.IntentPayload.Path,
+            host: config.public.intentPayload.host,
+            port: config.public.intentPayload.port,
+            path: config.public.intentPayload.path,
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

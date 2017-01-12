@@ -2,9 +2,9 @@ exports = {
     /**
      * Endpoint to forward intent payloads
      */
-    IntentPayload: {
-        Host: 'https://austinbrunkhorst.com',
-        Port: 80,
-        Path: '/services/xena/IntentPayload.php'
+    intentPayload: {
+        host: 'https://austinbrunkhorst.com',
+        port: 80,
+        path: '/services/xena/IntentPayload.php'
     }
 };
