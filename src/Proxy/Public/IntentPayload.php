@@ -14,7 +14,7 @@ $privateDir = $_SERVER[ 'HOME' ] .'/services/xena';
 
 require_once $privateDir .'/Config.php';
 require_once $privateDir .'/Utils.php';
-require_once $privateDir .'/lib/Socket/Socket.php'
+require_once $privateDir .'/lib/Socket/Socket.php';
 require_once $privateDir .'/lib/Socket/Factory.php';
 require_once $privateDir .'/lib/Socket/Exception.php';
 
